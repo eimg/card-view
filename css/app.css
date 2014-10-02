@@ -1,0 +1,159 @@
+/* System style */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: arial;
+	background: #ECF0F1;
+	overflow-x: hidden;
+}
+
+.wrap {
+	width: 20000px;
+	position: absolute;
+	left: 0;
+}
+
+.wrap > .card {
+	box-shadow: 0 0 5px #ddd;
+	margin: 10px;
+	background: #fff;
+	min-height: 400px;
+	float: left;
+	position: relative;
+}
+
+.inner {
+	width: 20000px;
+	position: absolute;
+	left: 0;
+	display: none;
+}
+
+.active .inner {
+	display: block;
+}
+
+.inner > .card {
+	margin: 5px;
+	background: #ECF0F1;
+	min-height: 100px;
+	float: left;
+}
+
+.tool {
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 5px;
+	background: #3498DB;
+}
+
+.tool.sticky.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	z-index: 9997;
+}
+
+.tool.sticky.bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	min-width: 100%;
+	z-index: 9998;
+}
+
+.menu {
+	position: absolute;
+	min-height: 100%;
+	width: 0%;
+	background: #34495E;
+	z-index: 9999;
+	color: #fff;
+	overflow: hidden;
+}
+
+.menu.left {
+	left: 0;
+}
+
+.menu.right {
+	right: 0;
+}
+
+.close-menu {
+	display: block;
+	text-align: center;
+	line-height: 32px;
+	float: right;
+	width: 32px;
+	height: 32px;
+	border-radius: 32px;
+	font-weight: bold;
+	background: rgba(255,255,255,0.2);
+	margin: 10px;
+}
+
+.flip .front, .flip .back{
+	height: 100%;
+}
+/* End of system style*/
+
+/* Demo style */
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#two {
+	text-align: center;
+	background: #1ABC9C;
+}
+
+#two a {
+	display: inline-block;
+	margin: 10px;
+	font-weight: bold;
+}
+
+#three {
+	background: #2ECC71;
+}
+
+.front {
+	background: #E74C3C;
+}
+
+.back {
+	background: #F1C40F;
+}
+
+.tool ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.tool ul li {
+	float: left;
+	padding: 0 20px;
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.flip {
+	text-align: center;
+}
+
+.toggle-flip {
+	display: inline-block;
+	margin-top: 100px;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 15px 60px;
+	background: rgba(255,255,255,0.2);
+	border-radius: 5px;
+}

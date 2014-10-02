@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Card View</title>
+
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div class="tool sticky top">
+		<ul>
+			<li>
+				<a href="#menu-one" class="menu-trigger">
+					<img src="img/menu.png" alt="">
+				</a>
+			</li>
+			<li><a href="#one" class="nav">One</a></li>
+			<li><a href="#two" class="nav">Two</a></li>
+			<li><a href="#three" class="nav">Three</a></li>
+		</ul>
+	</div>
+
+	<div class="menu left" id="menu-one">
+		<a href="#" class="close-menu">&times;</a>
+	</div>
+
+	<div class="wrap">
+		
+		<div id="one" class="card flip">
+			<div class="front">
+				<a href="#one" class="toggle-flip">Flip Me</a>
+			</div>
+			<div class="back">
+				<a href="#one" class="toggle-flip">Flip Me</a>
+			</div>
+		</div>
+
+		<div id="two" class="card">
+			<a href="#prev" class="slide">&laquo; Previous</a>
+			<a href="#next" class="slide">Next &raquo;</a>
+			
+			<div class="inner">
+				<div class="card" id="prev">
+					
+				</div>
+				<div class="card" id="next">
+					
+				</div>
+			</div>
+		</div>
+		
+		<div id="three" class="card">
+
+		</div>
+	</div>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.quickflip.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
