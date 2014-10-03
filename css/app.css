@@ -50,6 +50,15 @@ body {
 	background: #3498DB;
 }
 
+.tool .nav {
+	color: #ECF0F1;
+}
+
+.tool .nav.active {
+	color: #fff;
+	font-weight: bold;
+}
+
 .tool.sticky.top {
 	position: fixed;
 	top: 0;

@@ -3,6 +3,10 @@ $(function() {
 });
 
 function init() {
+	$(window).scroll(function() {
+		$(document).scrollLeft(0);
+	});
+
 	var winWidth = $(window).width();
 
 	// Setup Stage
@@ -27,17 +31,23 @@ function init() {
 	// Goto .active Card
 	var gotoPos = $(".active").data("left");
 	if(gotoPos) gotoPos = "-" + gotoPos + "px";
-	$(".wrap").animate({"left": gotoPos});
+	else $(".wrap > .card:first").addClass("active");
+	$(".wrap").velocity({"left": gotoPos});
+
+	$(".nav[href='#" + $(".card.active").attr("id") + "']").addClass('active');
 
 	// Setup Navigation
 	$(".nav").click(function() {
 		var target = $(this).attr("href");
 		var pos = $(target).data("left");
 		if(pos) pos = "-" + pos + "px";
-		$(".wrap").animate({"left": pos});
+		$(".wrap").velocity({"left": pos});
 
 		$(".wrap > .card").removeClass("active");
 		$(target).addClass("active");
+
+		$(".nav").removeClass("active");
+		$(this).addClass('active');
 
 		return false;
 	});
@@ -60,20 +70,20 @@ function init() {
 		var target = $(this).attr("href");
 		var pos = $(target).data("left");
 		if(pos) pos = "-" + pos + "px";
-		$(".inner").animate({"left": pos});
+		$(".inner").velocity({"left": pos});
 		return false;
 	});
 
 	// Open Menu
 	$(".menu-trigger").click(function(event) {
 		var target = $(this).attr("href");
-		$(target).animate({"width": "50%"});
+		$(target).velocity({"width": "50%"});
 		return false;
 	});
 
 	// Close Menu
 	$(".close-menu").click(function() {
-		$(this).parent().animate({"width": "0%"});
+		$(this).parent().velocity({"width": "0%"});
 		return false;
 	});
 
