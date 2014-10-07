@@ -1,5 +1,14 @@
 $(function() {
 	init();
+
+	$(".wrap").swipe({
+		swipeLeft:function() {
+			next();
+		},
+		swipeRight:function() {
+			prev();
+		}
+	});
 });
 
 function init() {
@@ -93,4 +102,32 @@ function init() {
 		var target = $(this).attr("href");
 		$(target).quickFlipper();
 	});
+}
+
+function next() {
+	if($(".active").is($(".wrap > .card:last"))) return false;
+
+	var $next = $(".active").next();
+	var gotoPos = $next.data("left");
+	if(gotoPos !== "undefined") gotoPos = "-" + gotoPos + "px";
+	$(".wrap").velocity({"left": gotoPos});
+
+	$(".wrap > .card, .nav").removeClass("active");
+	$next.addClass("active");
+
+	$(".nav[href='#" + $(".card.active").attr("id") + "']").addClass('active');
+}
+
+function prev() {
+	if($(".active").is($(".wrap > .card:first"))) return false;
+
+	var $prev = $(".active").prev();
+	var gotoPos = $prev.data("left");
+	if(gotoPos !== "undefined") gotoPos = "-" + gotoPos + "px";
+	$(".wrap").velocity({"left": gotoPos});
+
+	$(".wrap > .card, .nav").removeClass("active");
+	$prev.addClass("active");
+
+	$(".nav[href='#" + $(".card.active").attr("id") + "']").addClass('active');
 }
